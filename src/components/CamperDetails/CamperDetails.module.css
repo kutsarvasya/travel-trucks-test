@@ -1,0 +1,18 @@
+.gallery {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.media {
+  border-radius: 10px;
+  width: 292px;
+  height: 312px;
+  overflow: hidden;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
