@@ -7,10 +7,53 @@
   padding: 16px 40px;
   border-radius: 200px;
 
-  background-color: #e44848;
-  color: #fff;
+  color: #101828;
   text-decoration: none;
-
+  background-color: transparent;
   white-space: nowrap;
-  border: none;
+  width: fit-content;
+  border: 1px solid #dadde1;
 }
+
+.button:hover,
+.button:focus {
+  border: 1px solid #d84343;
+}
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+.container {
+  display: flex;
+  gap: 64px; /* расстояние между фильтром и каталогом */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 64px 48px;
+}
+
+/* .container > :first-child {
+  width: 360px;              
+  flex-shrink: 0;
+
+  position: sticky;
+  top: 24px;                
+  align-self: flex-start;
+
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;          
+}
+
+
+.catalog {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding-right: 8px;        
+} */

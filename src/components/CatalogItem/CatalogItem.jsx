@@ -1,6 +1,12 @@
 import s from "./CatalogItem.module.css";
 import sprite from "../../assets/sprite.svg";
 import ButtonLink from "../ButtonLink/ButtonLink";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectIsFavorite,
+  toggleFavorite,
+} from "../../redux/favorites/favoritesSlice";
+import clsx from "clsx";
 
 const formatPrice = (value) =>
   new Intl.NumberFormat("en-EU", {
@@ -10,6 +16,9 @@ const formatPrice = (value) =>
   }).format(value);
 
 function CatalogItem({ i }) {
+  const dispatch = useDispatch();
+  const isFavorite = useSelector(selectIsFavorite(i.id));
+
   return (
     <div className={s.card}>
       <div className={s.media}>
@@ -29,8 +38,10 @@ function CatalogItem({ i }) {
               <p className={s.price}>{formatPrice(i.price)}</p>
               <button
                 type="button"
-                className={s.favoriteBtn}
-                onClick={() => {}}
+                className={clsx(s.favoriteBtn, isFavorite && s.active)}
+                onClick={() => {
+                  dispatch(toggleFavorite(i.id));
+                }}
               >
                 <svg className={s.favoriteIcon} width="25" height="24">
                   <use href={`${sprite}#favorite`} />
@@ -119,7 +130,7 @@ function CatalogItem({ i }) {
               refrigerator
             </li>
           )}
-          {/* {i.microwave && (
+          {i.microwave && (
             <li className={s.tag}>
               <svg className={s.icon} width="20" height="20">
                 <use href={`${sprite}#microwave`} />
@@ -142,8 +153,9 @@ function CatalogItem({ i }) {
               </svg>
               water
             </li>
-          )} */}
+          )}
         </ul>
+
         <ButtonLink to={`/catalog/${i.id}`}>Show more</ButtonLink>
       </div>
     </div>

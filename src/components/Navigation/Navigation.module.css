@@ -4,9 +4,9 @@
 }
 
 .container {
-  max-width: 1312px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 24px 64px;
 
   display: flex;
   align-items: center;
@@ -16,8 +16,11 @@
 .logo {
   font-size: 20px;
   font-weight: 700;
-  color: #111827;
+  color: #101828;
   text-decoration: none;
+}
+.trucks {
+  color: #475467;
 }
 
 .nav {
@@ -30,11 +33,12 @@
 }
 
 .link {
-  font-size: 14px;
   font-weight: 500;
-  color: #111827;
-  text-decoration: none;
+  font-size: 16px;
+  line-height: 150%;
 
+  text-decoration: none;
+  color: #101828;
   padding: 6px 2px;
   border-bottom: 2px solid transparent;
   transition:
@@ -47,8 +51,6 @@
 }
 
 .active {
-  font-weight: 700;
-  border-bottom-color: #d84343;
   color: #d84343;
 }
 

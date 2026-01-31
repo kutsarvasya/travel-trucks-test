@@ -1,0 +1,16 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 56px;
+  padding: 16px 40px;
+  border-radius: 200px;
+
+  color: #101828;
+  text-decoration: none;
+
+  white-space: nowrap;
+  width: fit-content;
+  border: 1px solid #dadde1;
+}

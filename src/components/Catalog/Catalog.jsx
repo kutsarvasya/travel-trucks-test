@@ -8,13 +8,17 @@ function Catalog() {
   const catalog = useSelector(selectCatalog);
 
   return (
-    <ul className={s.list}>
-      {catalog.map((i) => (
-        <li key={i.id}>
-          <CatalogItem i={i} />
-        </li>
-      ))}
-    </ul>
+    <>
+      {catalog && (
+        <ul className={s.list}>
+          {catalog.map((i) => (
+            <li key={i.id}>
+              <CatalogItem i={i} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 export default Catalog;

@@ -8,7 +8,7 @@ function Navigation() {
       <header className={s.header}>
         <div className={s.container}>
           <NavLink to="/" className={s.logo}>
-            TravelTrucks
+            Travel<span className={s.trucks}>Trucks</span>
           </NavLink>
 
           <nav className={s.nav}>

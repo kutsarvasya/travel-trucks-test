@@ -42,6 +42,9 @@
   line-height: 133%;
   color: #111827;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .rightTop {
   display: flex;
@@ -73,7 +76,6 @@
 
 .active .favoriteIcon {
   fill: #e44848;
-  stroke: #e44848;
 }
 
 .meta {

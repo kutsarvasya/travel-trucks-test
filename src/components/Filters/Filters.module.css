@@ -1,0 +1,148 @@
+.filters {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.equipmentList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 8px;
+  row-gap: 12px;
+  border-top: 1px solid #dadde1;
+  padding-top: 24px;
+  margin-bottom: 32px;
+}
+
+.tile {
+  height: 96px;
+  width: 112px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  background: transparent;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  cursor: pointer;
+  user-select: none;
+  fill: #101828;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 120ms ease;
+}
+
+.icon {
+  fill: transparent;
+  stroke: #101828;
+}
+.tile:hover {
+  box-shadow: 0 1px 6px rgba(16, 24, 40, 0.08);
+  transform: translateY(-1px);
+}
+
+.tile:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(228, 72, 72, 0.25);
+  border-color: #e44848;
+}
+
+.active {
+  border-color: #e44848;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+.searchBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 56px;
+  padding: 16px 60px;
+  border-radius: 200px;
+  cursor: pointer;
+  border: none;
+  background-color: #e44848;
+  color: #fff;
+  text-decoration: none;
+
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.label {
+  display: block;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6c717b;
+
+  margin-bottom: 40px;
+}
+
+.inputWrap {
+  margin-top: 8px;
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  fill: #6c717b;
+
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  height: 56px;
+
+  padding: 18px 16px 18px 46px;
+  border: none;
+  border-radius: 12px;
+
+  background: #f2f4f7;
+  color: #101828;
+
+  font-size: 16px;
+  line-height: 1.25;
+
+  outline: none;
+}
+
+.input::placeholder {
+  color: #667085;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 1px rgba(16, 24, 40, 0.5);
+}
+.input:focus + .inputIcon,
+.inputWrap:focus-within .inputIcon {
+  stroke: #101828;
+}
+.filtersInfo {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #475467;
+  margin: 0 0 32px 0;
+}

@@ -1,15 +1,19 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { getCatalog, getItemById } from "./thunks";
 
+const initialState = {
+  tems: [],
+  total: 0,
+  page: 1,
+  selectedItem: null,
+  loading: false,
+  error: null,
+};
 const catalogSlice = createSlice({
   name: "catalog",
-  initialState: {
-    items: [],
-    total: 0,
-    page: 1,
-    selectedItem: null,
-    loading: false,
-    error: null,
+  initialState,
+  reducers: {
+    resetCatalog: () => initialState,
   },
   extraReducers: (builder) => {
     builder
@@ -53,4 +57,5 @@ export const selectSelectedItem = (state) => state.catalog.selectedItem;
 export const selectTotaPages = createSelector([selectTotal], (total) => {
   return Math.ceil(total / 4);
 });
+export const { resetCatalog } = catalogSlice.actions;
 export const catalogReduser = catalogSlice.reducer;
