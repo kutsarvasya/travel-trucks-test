@@ -1,4 +1,3 @@
-// api/locations.js
 import axios from "axios";
 
 export async function fetchLocations(query) {

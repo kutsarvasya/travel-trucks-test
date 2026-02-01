@@ -27,33 +27,11 @@
 }
 .container {
   display: flex;
-  gap: 64px; /* расстояние между фильтром и каталогом */
+  gap: 64px;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 64px 48px;
+  padding: 0 64px;
 }
-
-/* .container > :first-child {
-  width: 360px;              
-  flex-shrink: 0;
-
-  position: sticky;
-  top: 24px;                
-  align-self: flex-start;
-
-  max-height: calc(100vh - 48px);
-  overflow-y: auto;          
+.catalogPage {
+  padding-top: 48px;
 }
-
-
-.catalog {
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  max-height: calc(100vh - 48px);
-  overflow-y: auto;
-  padding-right: 8px;        
-} */

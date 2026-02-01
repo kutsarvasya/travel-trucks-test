@@ -8,12 +8,8 @@ import {
 } from "../../redux/favorites/favoritesSlice";
 import clsx from "clsx";
 
-const formatPrice = (value) =>
-  new Intl.NumberFormat("en-EU", {
-    style: "currency",
-    currency: "EUR",
-    minimumFractionDigits: 2,
-  }).format(value);
+import formatPrice from "../../helpers/formatPrice";
+import TagList from "../TagList/TagList";
 
 function CatalogItem({ i }) {
   const dispatch = useDispatch();
@@ -68,92 +64,7 @@ function CatalogItem({ i }) {
 
         <p className={s.desc}>{i.description}</p>
         <ul className={s.tags}>
-          <li className={s.tag}>
-            <svg className={""} width="20" height="20">
-              <use href={`${sprite}#transmission`} />
-            </svg>
-            {i.transmission}
-          </li>
-          <li className={s.tag}>
-            <svg className={""} width="20" height="20">
-              <use href={`${sprite}#fuel`} />
-            </svg>
-            {i.engine}
-          </li>
-          {i.AC && (
-            <li className={s.tag}>
-              <svg className={""} width="20" height="20">
-                <use href={`${sprite}#wind`} />
-              </svg>
-              AC
-            </li>
-          )}
-          {i.bathroom && (
-            <li className={s.tag}>
-              <svg className={""} width="20" height="20">
-                <use href={`${sprite}#bathroom`} />
-              </svg>
-              bathroom
-            </li>
-          )}
-          {i.kitchen && (
-            <li className={s.tag}>
-              {" "}
-              <svg className={""} width="20" height="20">
-                <use href={`${sprite}#kitchen`} />
-              </svg>
-              kitchen
-            </li>
-          )}
-          {i.TV && (
-            <li className={s.tag}>
-              <svg className={""} width="20" height="20">
-                <use href={`${sprite}#tv`} />
-              </svg>
-              TV
-            </li>
-          )}
-          {i.radio && (
-            <li className={s.tag}>
-              {" "}
-              <svg className={""} width="20" height="20">
-                <use href={`${sprite}#radio`} />
-              </svg>
-              radio
-            </li>
-          )}
-          {i.refrigerator && (
-            <li className={s.tag}>
-              <svg className={""} width="20" height="20">
-                <use href={`${sprite}#refrigerator`} />
-              </svg>
-              refrigerator
-            </li>
-          )}
-          {i.microwave && (
-            <li className={s.tag}>
-              <svg className={s.icon} width="20" height="20">
-                <use href={`${sprite}#microwave`} />
-              </svg>
-              microwave
-            </li>
-          )}
-          {i.gas && (
-            <li className={s.tag}>
-              <svg className={s.icon} width="20" height="20">
-                <use href={`${sprite}#gas`} />
-              </svg>
-              gas
-            </li>
-          )}
-          {i.water && (
-            <li className={s.tag}>
-              <svg className={s.icon} width="20" height="20">
-                <use href={`${sprite}#water`} />
-              </svg>
-              water
-            </li>
-          )}
+          <TagList item={i} />
         </ul>
 
         <ButtonLink to={`/catalog/${i.id}`}>Show more</ButtonLink>

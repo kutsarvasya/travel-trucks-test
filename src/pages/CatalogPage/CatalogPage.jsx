@@ -24,20 +24,22 @@ function CatalogPage() {
   };
 
   return (
-    <div className={s.container}>
-      <Filters onSearch={handleSearch} />
-      <div className={s.catalog}>
-        <Catalog />
-        {page < totalPages && (
-          <button
-            className={s.button}
-            onClick={() => dispatch(getCatalog({ page: page + 1 }))}
-          >
-            Load More
-          </button>
-        )}
+    <section className={s.catalogPage}>
+      <div className={s.container}>
+        <Filters onSearch={handleSearch} />
+        <div className={s.catalog}>
+          <Catalog />
+          {page < totalPages && (
+            <button
+              className={s.button}
+              onClick={() => dispatch(getCatalog({ page: page + 1 }))}
+            >
+              Load More
+            </button>
+          )}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 export default CatalogPage;

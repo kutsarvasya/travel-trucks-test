@@ -3,17 +3,14 @@ import { selectSelectedItem } from "../../redux/catalog/slice";
 import { NavLink, Outlet } from "react-router-dom";
 import s from "./CamperDetails.module.css";
 import sprite from "../../assets/sprite.svg";
-import clsx from "clsx";
 
-const formatPrice = (value) =>
-  new Intl.NumberFormat("en-EU", {
-    style: "currency",
-    currency: "EUR",
-    minimumFractionDigits: 2,
-  }).format(value);
+import CamperDetailsNav from "../CamperDetailsNav/CamperDetailsNav";
+import formatPrice from "../../helpers/formatPrice";
+import BookingForm from "../BookingForm/BookingForm";
+
 function CamperDetails() {
   const item = useSelector(selectSelectedItem);
-  console.log(item);
+
   return (
     item && (
       <div>
@@ -51,24 +48,11 @@ function CamperDetails() {
           ))}
         </ul>
         <p className={s.desc}>{item.description}</p>
-        <nav className={s.nav}>
-          <NavLink
-            to=""
-            end
-            className={({ isActive }) => clsx(s.link, isActive && s.active)}
-          >
-            Features
-          </NavLink>
-
-          <NavLink
-            to="reviews"
-            end
-            className={({ isActive }) => clsx(s.link, isActive && s.active)}
-          >
-            Reviews
-          </NavLink>
-        </nav>
-        <Outlet />
+        <CamperDetailsNav />
+        <div className={s.bottomRow}>
+          <Outlet context={{ item }} />
+          <BookingForm />
+        </div>
       </div>
     )
   );

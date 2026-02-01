@@ -37,7 +37,7 @@ export default function LocationAutocomplete({ value, onChange }) {
 
   const handleChange = (e) => {
     onChange(e.target.value);
-    setOpen(true); // ✅ открыть при вводе
+    setOpen(true);
   };
 
   const handleSelect = (label) => {
@@ -48,9 +48,8 @@ export default function LocationAutocomplete({ value, onChange }) {
   return (
     <div
       className={s.inputWrap}
-      onFocus={() => setOpen(true)} // ✅ открыть при фокусе
+      onFocus={() => setOpen(true)}
       onBlur={() => {
-        // ✅ закрыть после клика по option (клик успеет отработать)
         setTimeout(() => setOpen(false), 120);
       }}
     >
@@ -72,7 +71,7 @@ export default function LocationAutocomplete({ value, onChange }) {
               <button
                 type="button"
                 className={s.option}
-                onMouseDown={(e) => e.preventDefault()} // ✅ чтобы blur не закрыл раньше клика
+                onMouseDown={(e) => e.preventDefault()}
                 onClick={() => handleSelect(item.label)}
               >
                 {item.label}

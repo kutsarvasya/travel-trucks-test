@@ -1,11 +1,9 @@
-/* контейнер всего поля + dropdown */
 .inputWrap {
   position: relative;
   width: 100%;
   margin-top: 8px;
 }
 
-/* иконка внутри поля */
 .inputIcon {
   position: absolute;
   left: 14px;
@@ -24,12 +22,11 @@
   transition: fill 150ms ease;
 }
 
-/* input */
 .input {
   width: 100%;
   height: 56px;
 
-  padding: 18px 16px 18px 46px; /* место под иконку */
+  padding: 18px 16px 18px 46px;
   border-radius: 12px;
   border: none;
 
@@ -48,22 +45,19 @@
   color: #667085;
 }
 
-/* focus input — как у тебя */
 .input:focus {
   box-shadow: 0 0 0 1px rgba(16, 24, 40, 0.5);
 }
 
-/* focus → иконка темнее */
 .inputWrap:focus-within .inputIcon {
   fill: #101828;
 }
 
-/* dropdown — строго под инпутом */
 .dropdown {
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(100% + 6px); /* 👈 ниже input */
+  top: calc(100% + 6px);
 
   margin: 0;
   padding: 6px;
@@ -78,10 +72,9 @@
   max-height: 240px;
   overflow-y: auto;
 
-  z-index: 20; /* 👈 поверх всего */
+  z-index: 20;
 }
 
-/* кнопка-опция */
 .option {
   width: 100%;
   padding: 10px 12px;
@@ -108,7 +101,6 @@
   box-shadow: 0 0 0 3px rgba(228, 72, 72, 0.18);
 }
 
-/* (опционально) скроллбар аккуратнее */
 .dropdown::-webkit-scrollbar {
   width: 8px;
 }

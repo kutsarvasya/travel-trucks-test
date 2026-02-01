@@ -27,7 +27,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 }
 .topRow {
   display: flex;
@@ -113,10 +113,11 @@
   font-size: 16px;
   line-height: 150%;
 
+  white-space: nowrap;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+
+  min-width: 0;
 }
 .tags {
   list-style: none;

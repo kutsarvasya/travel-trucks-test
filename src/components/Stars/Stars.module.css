@@ -1,0 +1,15 @@
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.starActive {
+  fill: #f59e0b;
+  stroke: #f59e0b;
+}
+
+.starEmpty {
+  fill: #eaecf0;
+  stroke: #eaecf0;
+}
