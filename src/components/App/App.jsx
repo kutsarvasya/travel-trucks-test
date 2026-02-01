@@ -30,6 +30,7 @@ function App() {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       {isLoading && <Loader />}
       <ToastContainer position="top-right" autoClose={3000} />
