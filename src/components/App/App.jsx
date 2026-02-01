@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Loader from "../Loader/Loader";
 import { ToastContainer, toast } from "react-toastify";
 import { useEffect } from "react";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 
 function App() {
   const isLoading = useSelector(selectLoading);
