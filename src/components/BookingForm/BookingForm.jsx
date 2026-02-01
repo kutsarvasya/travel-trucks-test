@@ -2,6 +2,7 @@ import { Formik, Form, Field } from "formik";
 import s from "./BookingForm.module.css";
 import validate from "../../helpers/formValidate";
 import DatePickerField from "../DatePickerField/DatePickerField";
+import { toast } from "react-toastify";
 
 const initialValues = {
   name: "",
@@ -13,6 +14,7 @@ const initialValues = {
 function BookingForm() {
   const handleSubmit = (values, actions) => {
     console.log(values);
+    toast.success("Booking request sent!");
     actions.resetForm();
   };
 
