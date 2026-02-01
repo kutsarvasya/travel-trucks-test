@@ -18,7 +18,7 @@ function Filters({ onSearch }) {
 
   const toggleForm = (value) =>
     dispatch(setForm(filters.form === value ? "" : value));
-  console.log(filters);
+  
   return (
     <aside className={s.filters}>
       <label className={s.label}>
